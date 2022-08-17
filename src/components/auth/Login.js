@@ -17,8 +17,8 @@ function Login() {
   const [errors, setErrors] = useState({});
 
   const { mutate } = useMutation(
-    ({ email, password }) => {
-      return axios.post(
+    async ({ email, password }) => {
+      return await axios.post(
         'https://dev-connect-public-be.herokuapp.com/api/auth/login',
         { email, password }
       );
