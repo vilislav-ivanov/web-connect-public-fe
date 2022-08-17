@@ -19,7 +19,10 @@ const Register = function () {
 
   const { mutate } = useMutation(
     async (registerData) => {
-      return await axios.post('/api/auth/register', registerData);
+      return await axios.post(
+        'https://dev-connect-public-be.herokuapp.com/api/auth/register',
+        registerData
+      );
     },
     {
       onSuccess: () => {
