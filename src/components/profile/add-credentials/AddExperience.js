@@ -13,7 +13,10 @@ const AddExperience = function () {
   const { state: userState } = useUserContext();
   const { mutate } = useMutation(
     async (experience) => {
-      return await axios.post('/api/profile/experience', experience);
+      return await axios.post(
+        'https://dev-connect-public-be.herokuapp.com/api/profile/experience',
+        experience
+      );
     },
     {
       onSuccess: (data) => {

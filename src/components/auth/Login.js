@@ -18,7 +18,10 @@ function Login() {
 
   const { mutate } = useMutation(
     ({ email, password }) => {
-      return axios.post('/api/auth/login', { email, password });
+      return axios.post(
+        'https://dev-connect-public-be.herokuapp.com/api/auth/login',
+        { email, password }
+      );
     },
     {
       onSuccess: ({ data }) => {

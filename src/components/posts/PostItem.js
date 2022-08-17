@@ -17,7 +17,9 @@ function PostItem({ post }) {
 
   const { mutate: mutateLike } = useMutation(
     async (postId) => {
-      return await axios.post(`/api/post/like/${postId}`);
+      return await axios.post(
+        `https://dev-connect-public-be.herokuapp.com/api/post/like/${postId}`
+      );
     },
     {
       onSuccess: (newData) => {
@@ -38,7 +40,9 @@ function PostItem({ post }) {
 
   const { mutate: mutateUnlike } = useMutation(
     async (postId) => {
-      return await axios.post(`/api/post/unlike/${postId}`);
+      return await axios.post(
+        `https://dev-connect-public-be.herokuapp.com/api/post/unlike/${postId}`
+      );
     },
     {
       onSuccess: (newData) => {
@@ -59,7 +63,9 @@ function PostItem({ post }) {
 
   const { mutate: mutateDelete } = useMutation(
     async (postId) => {
-      return await axios.delete(`/api/post/${postId}`);
+      return await axios.delete(
+        `https://dev-connect-public-be.herokuapp.com/api/post/${postId}`
+      );
     },
     {
       onSuccess: (data) => {

@@ -13,7 +13,7 @@ function ImageUpload() {
     async (formData) => {
       return await axios({
         method: 'post',
-        url: '/api/image',
+        url: 'https://dev-connect-public-be.herokuapp.com/api/image',
         data: formData,
         headers: { 'Content-Type': 'multipart/form-data' },
       });

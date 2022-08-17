@@ -18,7 +18,9 @@ const Post = function () {
 
   const { mutate: mutateDelete } = useMutation(
     async (postId, commentId) => {
-      return await axios.delete(`/api/post/comment/${postId}/${commentId}`);
+      return await axios.delete(
+        `https://dev-connect-public-be.herokuapp.com/api/post/comment/${postId}/${commentId}`
+      );
     },
     {
       onSuccess: (data) => {
@@ -28,7 +30,9 @@ const Post = function () {
   );
 
   const { isLoading, data } = useQuery(['post', postId], async () => {
-    return await axios.get(`/api/post/${postId}`);
+    return await axios.get(
+      `https://dev-connect-public-be.herokuapp.com/api/post/${postId}`
+    );
   });
 
   const [showCommentForm, setShowCommetForm] = useState(false);

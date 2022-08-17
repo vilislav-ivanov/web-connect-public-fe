@@ -5,7 +5,7 @@ import Spinner from '../../common/Spinner';
 import axios from 'axios';
 
 export const ProfileGithub = function ({ profile }) {
-  const { data, isLoading } = useQuery(
+  const { isLoading } = useQuery(
     ['github', profile.githubusername],
     async () => {
       return await axios.get(

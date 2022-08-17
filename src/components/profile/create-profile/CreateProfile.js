@@ -46,7 +46,10 @@ const CreateProfile = function () {
 
   const { isError, mutate, error } = useMutation(
     async (profileData) => {
-      return await axios.post('/api/profile', profileData);
+      return await axios.post(
+        'https://dev-connect-public-be.herokuapp.com/api/profile',
+        profileData
+      );
     },
     {
       onSuccess: (data) => {

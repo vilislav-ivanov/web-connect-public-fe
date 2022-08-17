@@ -12,7 +12,10 @@ const AddEducation = function () {
   const { state: userState } = useUserContext();
   const { mutate } = useMutation(
     async (education) => {
-      return await axios.post('/api/profile/education', education);
+      return await axios.post(
+        'https://dev-connect-public-be.herokuapp.com/api/profile/education',
+        education
+      );
     },
     {
       onSuccess: (data) => {

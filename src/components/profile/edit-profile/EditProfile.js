@@ -46,7 +46,9 @@ const CreateProfile = function () {
   const { data, isLoading } = useQuery(
     ['profile', userState.user.email],
     async () => {
-      return await axios.get('/api/profile');
+      return await axios.get(
+        'https://dev-connect-public-be.herokuapp.com/api/profile'
+      );
     },
     {
       onSuccess: (data) => {
@@ -76,7 +78,10 @@ const CreateProfile = function () {
 
   const { isError, mutate, error } = useMutation(
     async (profileData) => {
-      return await axios.post('/api/profile', profileData);
+      return await axios.post(
+        'https://dev-connect-public-be.herokuapp.com/api/profile',
+        profileData
+      );
     },
     {
       onSuccess: (data) => {

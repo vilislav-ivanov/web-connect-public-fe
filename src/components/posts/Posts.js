@@ -14,7 +14,9 @@ const Posts = function () {
   const { state: userState } = useUserContex();
 
   const { isLoading, data } = useQuery(['post', 'all'], async () => {
-    return await axios.get('api/post/all');
+    return await axios.get(
+      'https://dev-connect-public-be.herokuapp.com/api/post/all'
+    );
   });
 
   // Redirect if someone tries to access this componenet without being authenticated

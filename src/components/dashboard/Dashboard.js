@@ -20,11 +20,15 @@ function Dashboard() {
   const navigate = useNavigate();
 
   const { isLoading, data } = useQuery(['profile'], async () => {
-    return await axios.get('/api/profile');
+    return await axios.get(
+      'https://dev-connect-public-be.herokuapp.com/api/profile'
+    );
   });
   const { mutate } = useMutation(
     () => {
-      return axios.delete('/api/profile');
+      return axios.delete(
+        'https://dev-connect-public-be.herokuapp.com/api/profile'
+      );
     },
     {
       onSuccess: (data) => {

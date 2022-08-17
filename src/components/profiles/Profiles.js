@@ -7,7 +7,9 @@ import axios from 'axios';
 
 const Profiles = function () {
   const { isLoading, data } = useQuery(['profiles'], async () => {
-    return await axios.get('/api/profile/all/');
+    return await axios.get(
+      'https://dev-connect-public-be.herokuapp.com/api/profile/all/'
+    );
   });
 
   let displayAllProfiles;

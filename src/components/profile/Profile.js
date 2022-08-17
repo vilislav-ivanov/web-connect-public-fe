@@ -15,7 +15,9 @@ const Profile = function () {
   const navigate = useNavigate();
 
   const { isLoading, data } = useQuery(['profile', handle], async () => {
-    return await axios.get(`/api/profile/handle/${handle}`);
+    return await axios.get(
+      `https://dev-connect-public-be.herokuapp.com/api/profile/handle/${handle}`
+    );
   });
 
   useEffect(() => {

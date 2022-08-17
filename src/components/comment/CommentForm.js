@@ -12,7 +12,10 @@ function CommentForm({ post }) {
 
   const { mutate: addComment } = useMutation(
     async ({ data, postId }) => {
-      return axios.post(`/api/post/comment/${postId}`, { text: data });
+      return axios.post(
+        `https://dev-connect-public-be.herokuapp.com/api/post/comment/${postId}`,
+        { text: data }
+      );
     },
     {
       onSuccess: (data) => {

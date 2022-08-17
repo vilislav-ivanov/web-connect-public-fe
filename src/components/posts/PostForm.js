@@ -17,7 +17,10 @@ function PostForm() {
 
   const { mutate } = useMutation(
     (post) => {
-      return axios.post('api/post', { text: post });
+      return axios.post(
+        'https://dev-connect-public-be.herokuapp.com/api/post',
+        { text: post }
+      );
     },
     {
       onSuccess: (newData) => {

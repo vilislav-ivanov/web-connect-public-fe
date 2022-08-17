@@ -8,7 +8,9 @@ function EducationTable({ educations }) {
   const queryClient = useQueryClient();
   const { mutate } = useMutation(
     (id) => {
-      return axios.delete(`api/profile/education/${id}`);
+      return axios.delete(
+        `https://dev-connect-public-be.herokuapp.com/api/profile/education/${id}`
+      );
     },
     {
       onSuccess: async () => {

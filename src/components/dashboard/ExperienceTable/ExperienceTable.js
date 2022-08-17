@@ -8,7 +8,9 @@ export function ExperienceTable({ experiences }) {
   const queryClient = useQueryClient();
   const { mutate } = useMutation(
     (id) => {
-      return axios.delete(`api/profile/experience/${id}`);
+      return axios.delete(
+        `https://dev-connect-public-be.herokuapp.com/api/profile/experience/${id}`
+      );
     },
     {
       onSuccess: async () => {
