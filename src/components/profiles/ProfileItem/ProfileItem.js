@@ -16,7 +16,11 @@ const ProfileItem = ({ profile }) => {
         <div className="col-2">
           <img
             className="rounded"
-            src={profile.image ? `/uploads/${profile.image}` : anon}
+            src={
+              profile.image
+                ? `https://dev-connect-public-be.herokuapp.com/uploads/${profile.image}`
+                : anon
+            }
             alt=""
           />
         </div>

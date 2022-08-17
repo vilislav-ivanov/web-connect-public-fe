@@ -97,7 +97,11 @@ const ProfileHeader = ({ profile }) => {
             <div className="col-4 col-md-3 m-auto">
               <img
                 className="rounded"
-                src={profile.image ? `/uploads/${profile.image}` : anon}
+                src={
+                  profile.image
+                    ? `https://dev-connect-public-be.herokuapp.com/uploads/${profile.image}`
+                    : anon
+                }
                 alt={profile.handle}
               />
             </div>

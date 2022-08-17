@@ -99,7 +99,9 @@ function PostItem({ post }) {
               <img
                 className="rounded d-md-block"
                 src={
-                  post.profile.image ? `/uploads/${post.profile.image}` : anon
+                  post.profile.image
+                    ? `https://dev-connect-public-be.herokuapp.com/uploads/${post.profile.image}`
+                    : anon
                 }
                 alt={post.userEmail}
               />

@@ -31,13 +31,6 @@ const Navigation = function () {
       </li>
       <li className="nav-item">
         <a href="/logout" onClick={onLogoutClick} className="nav-link">
-          {/* <img
-            className="rounded-circle"
-            // src={user.email}
-            alt={user.name}
-            style={{ width: '25px', marginRight: '5px' }}
-            title="You must have a Gravatar connected to your email to display an image"
-          />{' '} */}
           Logout
         </a>
       </li>
