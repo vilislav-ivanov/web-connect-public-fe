@@ -24,7 +24,6 @@ function PostForm() {
     },
     {
       onSuccess: (newData) => {
-        console.log('Post created, response from server: ', newData);
         queryClient.setQueryData(['post', 'all'], (oldData) => {
           return {
             ...oldData,
@@ -33,7 +32,6 @@ function PostForm() {
         });
       },
       onError: (error) => {
-        console.log('error data ', error.response.data);
         setErrors({ ...error.response.data });
       },
     }

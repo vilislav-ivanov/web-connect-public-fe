@@ -9,8 +9,6 @@ import axios from 'axios';
 import anon from '../../img/anon.png';
 
 function PostItem({ post }) {
-  console.log('post is: ', post);
-
   const queryClient = useQueryClient();
   const navigate = useNavigate();
   const { state: userState } = useUserContext();
