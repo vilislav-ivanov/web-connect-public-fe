@@ -3,63 +3,93 @@
 To see the application running follow the link:<br />
 Open [https://web-connect-public-fe.vercel.app](https://web-connect-public-fe.vercel.app)
 
-Register a user<br />
-Navigate [https://web-connect-public-fe.vercel.app/register](/register)
+1. Register user<br />
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- navigate to [/register](https://web-connect-public-fe.vercel.app/register)
+- all fields are required.<br />
+- email should be unique <br />
+- password and confirm password should match <br />
+- proper validation errors <br />
 
-### `npm test`
+2. Login user <br />
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- navigate to [/login](https://web-connect-public-fe.vercel.app/login)
+- all fields are required.<br />
+- email should be alredy registered <br />
+- password should be valid <br />
+- proper validation errors <br />
 
-### `npm run build`
+3. Dashboard (don't have a profile) <br />
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- logged in users are redirected to [/dashboard](https://web-connect-public-fe.vercel.app/dashboard)
+- if it is a first log in and you dont have a created profile, all you can do is navigate to [/create-profile](https://web-connect-public-fe.vercel.app/create-profile) .<br />
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+4. Create Profile <br />
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- navigate to [/create-profile](https://web-connect-public-fe.vercel.app/create-profile)<br />
+- this route is available only for logged in users.<br />
+- handle, status and skills are required fileds. If you don't provide them, you will receive a proper validation errors.<br />
+- handle should be unique (handle is used later to distinct different users).<br />
+- you can toggle on and off "Add Social Network Links", in case you want to add links to your social media accounts.<br />
+- after submiting the form, you are redirected back to [/dashboard](https://web-connect-public-fe.vercel.app/dashboard). <br />
 
-### `npm run eject`
+5. Dashboard (having a profile)<br />
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- You can upload avatar image
+- for edit a profile navigate to [/edit-profile](https://web-connect-public-fe.vercel.app/edit-profile)<br />
+- for adding experience navigate to [/experiencee](https://web-connect-public-fe.vercel.app/experience)<br />
+- for adding education navigate to [/education](https://web-connect-public-fe.vercel.app/education)<br />
+- there is a link to navigate to the current logged in user preview page <br />
+- in dashboard there is a list of alredy added educations and experiences, and a button to delete individual experience and education <br />
+- there is a button for deleting the profile <br />
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+6. Edit Profile <br />
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- navigate to [/edit-profile](https://web-connect-public-fe.vercel.app/edit-profile)<br />
+- this route is available only for logged in users that alredy have a created profile .<br />
+- status and skills are required fileds. If you don't provide them, you will receive a proper validation errors.<br />
+- you cant change the handler field.<br />
+- you can toggle on and off "Add Social Network Links", in case you want to add links to your social media accounts.<br />
+- after submiting the form, you are redirected back to [/dashboard](https://web-connect-public-fe.vercel.app/dashboard). <br />
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+7. Add Education <br />
 
-## Learn More
+- navigate to [/education](https://web-connect-public-fe.vercel.app/education)<br />
+- this route is available only for logged in users that alredy have a created profile .<br />
+- school, degree, field of study and from date are required fileds. If you don't provide them, you will receive a proper validation errors.<br />
+- a button to go back to dashboard <br />
+- after submiting the form, you are redirected back to [/dashboard](https://web-connect-public-fe.vercel.app/dashboard) and the currently created education is added to the education's table in the dashboard <br />
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+8. Add Experience <br />
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- navigate to [/experience](https://web-connect-public-fe.vercel.app/experience)<br />
+- this route is available only for logged in users that alredy have a created profile .<br />
+- job title, company and from date are required fileds. If you don't provide them, you will receive a proper validation errors.<br />
+- a button to go back to dashboard <br />
+- after submiting the form, you are redirected back to [/dashboard](https://web-connect-public-fe.vercel.app/dashboard) and the currently created experience is added to the experience's table in the dashboard <br />
 
-### Code Splitting
+9. Profiles <br />
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+- navigate to [/profiles](https://web-connect-public-fe.vercel.app/profiles)<br />
+- list all created profiles
 
-### Analyzing the Bundle Size
+10. Individual Profile <br />
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+- navigate to [/profile/:handle](https://web-connect-public-fe.vercel.app/profile/v-ivanov)<br />
+- display a individual profile
 
-### Making a Progressive Web App
+11. Posts
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+- navigate to [/posts](https://web-connect-public-fe.vercel.app/posts)<br />
+- list all posts
+- create a new post (with a required text field - validation error when submit without text field)
+- up/down vode post
+- delete if you are the owner of the post
 
-### Advanced Configuration
+12. Post
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- navigate to [/post/:postId](https://web-connect-public-fe.vercel.app/post/62fd1eccef91498a2346b7c9)<br />
+- display the post
+- dispaly comments added to the post
+- add comment (with a required text field - validation error when submit without text field)
+- button back to posts
